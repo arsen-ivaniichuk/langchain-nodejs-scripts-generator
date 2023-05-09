@@ -28,10 +28,12 @@ class GenerateScriptPromptTemplate(StringPromptTemplate, BaseModel):
         prompt = f"""Write a Node.js script, which will satisfy the following conditions:
         1. Script must contain a function or a set of functions, which must fulfill the task given
         in the description;
-        2. Script must contain one more function named 'test', which will accept 
+        2. If the task is to perform arithmetical calculations, ensure converting input variables  
+        to numeric data type;
+        3. Script must contain one more function named 'test', which will accept 
         any given parameters and will run the previously described functions with 
         those parameters. The result must be logged in console;
-        3. The script must contain nothing, but the comments and functions, described above.
+        4. The script must contain nothing, but the comments and functions, described above.
 
         Description: {kwargs["description"]}
         """
