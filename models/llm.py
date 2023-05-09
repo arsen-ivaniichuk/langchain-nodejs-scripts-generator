@@ -34,6 +34,7 @@ class GenerateScriptPromptTemplate(StringPromptTemplate, BaseModel):
         any given parameters and will run the previously described functions with 
         those parameters. The result must be logged in console;
         4. The script must contain nothing, but the comments and functions, described above.
+        Do not generate any examples of usage 
 
         Description: {kwargs["description"]}
         """
