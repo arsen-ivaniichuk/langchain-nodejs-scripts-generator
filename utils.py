@@ -46,6 +46,6 @@ def save_script(script: str):
     # Save the script
     with open(os.path.join(save_to_path, new_file_name), "w") as file:
         file.write(script)
-        file.write("\nconst args = process.argv.slice(2)\ntest(args[0], args[1])")
+        file.write("\nconst args = process.argv.slice(2)\ntest(...args)")
 
     return str(max_index + 1)
