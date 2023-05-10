@@ -16,7 +16,7 @@ generator_parser.add_argument("description", type=str, required=True, help="Ente
 # Request parser for script runner
 runner_parser = reqparse.RequestParser()
 runner_parser.add_argument("script_id", type=str, required=True, help="Provide a script id to run the script")
-runner_parser.add_argument("parameters", required=True, help="Provide parameters for the script", action="append")
+runner_parser.add_argument("parameters", help="Provide parameters for the script", action="append")
 
 
 class GeneratorBot(Resource):
