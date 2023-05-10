@@ -57,8 +57,11 @@ class ScriptRunner(Resource):
         :return: The output of the script as a string
         """
         args = runner_parser.parse_args()
+        subprocess_command = ["node", os.path.join(SCRIPTS_PATH, f"script_{args['script_id']}.js")]
+        if args["parameters"]:
+            subprocess_command = subprocess_command + args["parameters"]
         sub = subprocess.run(
-            ["node", os.path.join(SCRIPTS_PATH, f"script_{args['script_id']}.js")] + args["parameters"],
+            subprocess_command,
             capture_output=True
         )
         return sub.stdout.decode("utf-8").strip()
